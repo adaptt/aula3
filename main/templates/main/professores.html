@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <div class='container'>
+            <h1>Lista de alunos</h1>
+            <table class='table table-striped'>
+                <thread>
+                    <tr>
+                        <th scope='col'>Professor</th>
+                        <th scope='col'>Email</th>
+                        <th scope='col'>Telefone</th>
+                        <th scope='col'>Disciplina</th>
+                    </tr>
+                </thread>
+                <tbody>
+                    {% for professores in professores_list %}
+                    <tr>
+                        <td>{{ professores.nome_professor }}</td>
+                        <td>{{ professores.email_professor }}</td>
+                        <td>{{ professores.telefone_professor }}</td>
+                        <td>{{ professores.disciplina }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspon="4">Nenhum professor encontrado.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

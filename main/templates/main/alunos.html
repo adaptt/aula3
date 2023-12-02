@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <div class='container'>
+            <h1>Lista de alunos</h1>
+            <table class='table table-striped'>
+                <thread>
+                    <tr>
+                        <th scope='col'>Aluno</th>
+                        <th scope='col'>Email</th>
+                        <th scope='col'>Telefone</th>
+                    </tr>
+                </thread>
+                <tbody>
+                    {% for aluno in alunos_list %}
+                    <tr>
+                        <td>{{ aluno.nome }}</td>
+                        <td>{{ aluno.email }}</td>
+                        <td>{{ aluno.telefone }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspon="4">Nenhum aluno encontrado.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
